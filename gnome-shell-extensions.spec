@@ -4,7 +4,7 @@
 #
 Name     : gnome-shell-extensions
 Version  : 3.24.0
-Release  : 2
+Release  : 3
 URL      : http://ftp.acc.umu.se/pub/GNOME/sources/gnome-shell-extensions/3.24/gnome-shell-extensions-3.24.0.tar.xz
 Source0  : http://ftp.acc.umu.se/pub/GNOME/sources/gnome-shell-extensions/3.24/gnome-shell-extensions-3.24.0.tar.xz
 Summary  : No detailed summary available
@@ -41,8 +41,8 @@ locales components for the gnome-shell-extensions package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1491834381
-%configure --disable-static --enable-extensions=all
+export SOURCE_DATE_EPOCH=1491834651
+%configure --disable-static --enable-extensions=all --disable-classic-mode
 make V=1  %{?_smp_mflags}
 
 %check
@@ -53,7 +53,7 @@ export no_proxy=localhost
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1491834381
+export SOURCE_DATE_EPOCH=1491834651
 rm -rf %{buildroot}
 %make_install
 %find_lang gnome-shell-extensions
@@ -64,13 +64,11 @@ rm -rf %{buildroot}
 %files data
 %defattr(-,root,root,-)
 /usr/share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
-/usr/share/glib-2.0/schemas/org.gnome.shell.extensions.classic-overrides.gschema.xml
 /usr/share/glib-2.0/schemas/org.gnome.shell.extensions.example.gschema.xml
 /usr/share/glib-2.0/schemas/org.gnome.shell.extensions.native-window-placement.gschema.xml
 /usr/share/glib-2.0/schemas/org.gnome.shell.extensions.screenshot-window-sizer.gschema.xml
 /usr/share/glib-2.0/schemas/org.gnome.shell.extensions.user-theme.gschema.xml
 /usr/share/glib-2.0/schemas/org.gnome.shell.extensions.window-list.gschema.xml
-/usr/share/gnome-session/sessions/gnome-classic.session
 /usr/share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com/convenience.js
 /usr/share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com/extension.js
 /usr/share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com/metadata.json
@@ -115,7 +113,6 @@ rm -rf %{buildroot}
 /usr/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/extension.js
 /usr/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/metadata.json
 /usr/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/stylesheet.css
-/usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/classic.css
 /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/convenience.js
 /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/extension.js
 /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/metadata.json
@@ -130,16 +127,6 @@ rm -rf %{buildroot}
 /usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/metadata.json
 /usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/prefs.js
 /usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/stylesheet.css
-/usr/share/gnome-shell/modes/classic.json
-/usr/share/gnome-shell/theme/calendar-today.svg
-/usr/share/gnome-shell/theme/classic-process-working.svg
-/usr/share/gnome-shell/theme/classic-toggle-off-intl.svg
-/usr/share/gnome-shell/theme/classic-toggle-off-us.svg
-/usr/share/gnome-shell/theme/classic-toggle-on-intl.svg
-/usr/share/gnome-shell/theme/classic-toggle-on-us.svg
-/usr/share/gnome-shell/theme/gnome-classic-high-contrast.css
-/usr/share/gnome-shell/theme/gnome-classic.css
-/usr/share/xsessions/gnome-classic.desktop
 
 %files locales -f gnome-shell-extensions.lang
 %defattr(-,root,root,-)
