@@ -4,7 +4,7 @@
 #
 Name     : gnome-shell-extensions
 Version  : 3.26.2
-Release  : 10
+Release  : 11
 URL      : https://download.gnome.org/sources/gnome-shell-extensions/3.26/gnome-shell-extensions-3.26.2.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-shell-extensions/3.26/gnome-shell-extensions-3.26.2.tar.xz
 Summary  : No detailed summary available
