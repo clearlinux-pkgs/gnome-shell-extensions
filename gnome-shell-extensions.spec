@@ -4,7 +4,7 @@
 #
 Name     : gnome-shell-extensions
 Version  : 3.28.1
-Release  : 14
+Release  : 15
 URL      : https://download.gnome.org/sources/gnome-shell-extensions/3.28/gnome-shell-extensions-3.28.1.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-shell-extensions/3.28/gnome-shell-extensions-3.28.1.tar.xz
 Summary  : No detailed summary available
