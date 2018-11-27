@@ -4,15 +4,15 @@
 #
 Name     : gnome-shell-extensions
 Version  : 3.30.1
-Release  : 18
+Release  : 19
 URL      : https://download.gnome.org/sources/gnome-shell-extensions/3.30/gnome-shell-extensions-3.30.1.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-shell-extensions/3.30/gnome-shell-extensions-3.30.1.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: gnome-shell-extensions-license
-Requires: gnome-shell-extensions-data
-Requires: gnome-shell-extensions-locales
+Requires: gnome-shell-extensions-data = %{version}-%{release}
+Requires: gnome-shell-extensions-license = %{version}-%{release}
+Requires: gnome-shell-extensions-locales = %{version}-%{release}
 BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
 BuildRequires : pkgconfig(gio-2.0)
@@ -54,14 +54,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1539049508
-CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain   builddir
+export SOURCE_DATE_EPOCH=1543321325
+CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain -Dextension_set='all'  builddir
 ninja -v -C builddir
 
 %install
-mkdir -p %{buildroot}/usr/share/doc/gnome-shell-extensions
-cp COPYING %{buildroot}/usr/share/doc/gnome-shell-extensions/COPYING
-cp data/gnome-shell-sass/COPYING %{buildroot}/usr/share/doc/gnome-shell-extensions/data_gnome-shell-sass_COPYING
+mkdir -p %{buildroot}/usr/share/package-licenses/gnome-shell-extensions
+cp COPYING %{buildroot}/usr/share/package-licenses/gnome-shell-extensions/COPYING
+cp data/gnome-shell-sass/COPYING %{buildroot}/usr/share/package-licenses/gnome-shell-extensions/data_gnome-shell-sass_COPYING
 DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang gnome-shell-extensions
 
@@ -85,14 +85,28 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com/extension.js
 /usr/share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com/metadata.json
 /usr/share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com/stylesheet.css
+/usr/share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com/convenience.js
+/usr/share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com/extension.js
+/usr/share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com/metadata.json
+/usr/share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com/prefs.js
+/usr/share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 /usr/share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/convenience.js
 /usr/share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/extension.js
 /usr/share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/metadata.json
 /usr/share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/stylesheet.css
+/usr/share/gnome-shell/extensions/example@gnome-shell-extensions.gcampax.github.com/convenience.js
+/usr/share/gnome-shell/extensions/example@gnome-shell-extensions.gcampax.github.com/extension.js
+/usr/share/gnome-shell/extensions/example@gnome-shell-extensions.gcampax.github.com/metadata.json
+/usr/share/gnome-shell/extensions/example@gnome-shell-extensions.gcampax.github.com/prefs.js
+/usr/share/gnome-shell/extensions/example@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 /usr/share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/convenience.js
 /usr/share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/extension.js
 /usr/share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/metadata.json
 /usr/share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/stylesheet.css
+/usr/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/convenience.js
+/usr/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/extension.js
+/usr/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/metadata.json
+/usr/share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 /usr/share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com/convenience.js
 /usr/share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com/extension.js
 /usr/share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com/metadata.json
@@ -102,6 +116,10 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com/extension.js
 /usr/share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com/metadata.json
 /usr/share/gnome-shell/extensions/screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com/stylesheet.css
+/usr/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/convenience.js
+/usr/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/extension.js
+/usr/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/metadata.json
+/usr/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/convenience.js
 /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/extension.js
 /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/metadata.json
@@ -119,8 +137,8 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/doc/gnome-shell-extensions/COPYING
-/usr/share/doc/gnome-shell-extensions/data_gnome-shell-sass_COPYING
+/usr/share/package-licenses/gnome-shell-extensions/COPYING
+/usr/share/package-licenses/gnome-shell-extensions/data_gnome-shell-sass_COPYING
 
 %files locales -f gnome-shell-extensions.lang
 %defattr(-,root,root,-)
