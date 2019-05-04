@@ -4,7 +4,7 @@
 #
 Name     : gnome-shell-extensions
 Version  : 3.32.1
-Release  : 21
+Release  : 22
 URL      : https://download.gnome.org/sources/gnome-shell-extensions/3.32/gnome-shell-extensions-3.32.1.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-shell-extensions/3.32/gnome-shell-extensions-3.32.1.tar.xz
 Summary  : Extensions for GNOME shell, including classic mode
@@ -56,7 +56,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1555541691
+export SOURCE_DATE_EPOCH=1556989912
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain -Dextension_set='all'  builddir
 ninja -v -C builddir
 
