@@ -1,30 +1,36 @@
-40.4
+41.0
 ====
-* drive-menu: Fix indicator visibility [Florian; !176]
-* Use distinct gettext domain for e.g.o uploads [Florian; #335]
+* Bump version
+
+41.rc.1
+=======
+* Fix pre-generating stylesheets in tarball [Florian; !190]
 
 Contributors:
   Florian Müllner
 
-
-40.3
-====
-* drive-menu: Improve detection of network mounts [Florian; !27]
-* Misc. bug fixes [Florian; #340]
+41.rc
+=====
+* window-list: Adapt to overview-on-startup [Florian; !185]
+* apps-menu: Use a custom 'toggle-menu' shortcut [Florian; !173]
+* Misc. bug fixes and cleanups [Florian; !186]
 
 Contributors:
   Florian Müllner
 
-40.2
-====
+41.beta
+=======
 * window-list: Extend reactive area of minimap to screen edges [Adam; !171]
-* Misc. bug fixes [Florian; !172]
+* drive-menu: Improve detection of network mounts [Florian; !27, !176]
+* Use distinct gettext domain for e.g.o uploads [Florian; #335]
+* Misc. bug fixes and cleanups [Florian; !172, !174, !177, !167, !178, !180,
+  !181, !182, !183]
 
 Contributors:
-  Adam Goode, Florian Müllner
+  Marco Trevisan (Treviño), Adam Goode, Florian Müllner
 
 Translators:
-  Hugo Carvalho [pt], Juliano de Souza Camargo [pt]
+  Hugo Carvalho [pt], Juliano de Souza Camargo [pt], Alexander Shopov [bg]
 
 40.1
 ====
