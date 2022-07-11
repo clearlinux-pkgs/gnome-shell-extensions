@@ -4,7 +4,7 @@
 #
 Name     : gnome-shell-extensions
 Version  : 42.3
-Release  : 45
+Release  : 46
 URL      : https://download.gnome.org/sources/gnome-shell-extensions/42/gnome-shell-extensions-42.3.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-shell-extensions/42/gnome-shell-extensions-42.3.tar.xz
 Summary  : No detailed summary available
@@ -16,7 +16,6 @@ Requires: gnome-shell-extensions-locales = %{version}-%{release}
 BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
 BuildRequires : gjs-dev
-BuildRequires : mozjs78-dev
 BuildRequires : pkgconfig(gio-2.0)
 
 %description
@@ -57,7 +56,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1657033376
+export SOURCE_DATE_EPOCH=1657562914
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
