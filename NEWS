@@ -1,3 +1,38 @@
+43.0
+====
+
+Contributors:
+  Florian Müllner
+
+Translators:
+  Pawan Chitrakar [ne], Zurab Kargareteli [ka], Aleksandr Melman [ru]
+
+43.rc
+=====
+* Misc. bug fixes and cleanups [Florian; !240]
+
+Contributors:
+  Florian Müllner
+
+43.beta
+=======
+* Misc. bug fixes and cleanups [Florian; !237, !238]
+
+Contributors:
+  Florian Müllner
+
+Translators:
+  Nart Tlisha [ab]
+
+43.alpha
+========
+
+Contributors:
+  Florian Müllner
+
+Translators:
+  Marco Ciampa [it]
+
 42.3
 ====
 * screenshot-window-sizer: Fix reported sizes on wayland [Florian; !232]
