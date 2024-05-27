@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : gnome-shell-extensions
-Version  : 46.1
-Release  : 58
-URL      : https://download.gnome.org/sources/gnome-shell-extensions/46/gnome-shell-extensions-46.1.tar.xz
-Source0  : https://download.gnome.org/sources/gnome-shell-extensions/46/gnome-shell-extensions-46.1.tar.xz
+Version  : 46.2
+Release  : 59
+URL      : https://download.gnome.org/sources/gnome-shell-extensions/46/gnome-shell-extensions-46.2.tar.xz
+Source0  : https://download.gnome.org/sources/gnome-shell-extensions/46/gnome-shell-extensions-46.2.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CC0-1.0 GPL-2.0 LGPL-2.0 MIT
@@ -54,10 +54,10 @@ locales components for the gnome-shell-extensions package.
 
 
 %prep
-%setup -q -n gnome-shell-extensions-46.1
-cd %{_builddir}/gnome-shell-extensions-46.1
+%setup -q -n gnome-shell-extensions-46.2
+cd %{_builddir}/gnome-shell-extensions-46.2
 pushd ..
-cp -a gnome-shell-extensions-46.1 buildavx2
+cp -a gnome-shell-extensions-46.2 buildavx2
 popd
 
 %build
@@ -65,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713798173
+export SOURCE_DATE_EPOCH=1716831187
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
